@@ -1,0 +1,49 @@
+.container {
+  // height: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 50%;
+  margin-top: 5rem;
+
+  border-radius: 5px;
+  box-shadow: 7px 7px 7px gray;
+}
+table {
+  border-collapse: collapse;
+}
+
+th {
+  color: rgb(194, 23, 137);
+  width: 30%;
+  padding: 0.5rem;
+}
+
+td {
+  padding: 1rem;
+  text-align: center;
+  color: rgb(194, 23, 137);
+}
+
+.head {
+  width: 400px;
+  background-color: rgb(230, 172, 172);
+  th {
+    border: 1px solid pink;
+  }
+}
+
+.body {
+  td {
+    border-left: 1px solid pink;
+    border-right: 1px solid pink;
+    background-image: linear-gradient(
+      to right bottom,
+      rgb(243, 204, 204),
+      rgb(229, 239, 240)
+    );
+  }
+}

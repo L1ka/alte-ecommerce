@@ -1,0 +1,90 @@
+<header>
+  <div class="nav">
+    <a routerLink="/">
+      <img class="nav__logo" src="assets/images/logo.png" />
+    </a>
+
+    <ul class="product">
+      <li>
+        <a routerLink="/products" class="nav__list--link">Products</a>
+      </li>
+    </ul>
+
+    <form class="search" role="search">
+      <input
+        type="search"
+        class="search__input"
+        placeholder="Search"
+        [ngModel]="searchInput"
+        (ngModelChange)="search($event)"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <button class="search__button">
+        <fa-icon [icon]="searchIcon" class="search__icon"></fa-icon>
+      </button>
+    </form>
+
+    <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+      <input
+        type="search"
+        class="form-control"
+        placeholder="Search..."
+        aria-label="Search"
+        [ngModel]="searchInput"
+        (ngModelChange)="search($event)"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </form> -->
+    <div class="cart">
+      <a routerLink="/cart" class="nav__list--link">Cart</a>
+      <div class="cart-badge">
+        {{ cartCount$ | async }}
+      </div>
+    </div>
+
+    <ng-container *ngIf="userIsAuthenticated; else notAuthenticated">
+      <div class="dropdown">
+        <div class="account">
+          <a href="#" class="user">
+            <img
+              src="https://github.com/mdo.png"
+              alt="mdo"
+              width="32"
+              height="32"
+              class="rounded-circle"
+            />
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" routerLink="/manager">Content Manager</a>
+            </li>
+            <li><a class="dropdown-item" routerLink="/orders">Orders</a></li>
+          </ul>
+        </div>
+        <a class="dropdown-item nav__list--link btn" (click)="signOut()"
+          >Sign out</a
+        >
+      </div>
+    </ng-container>
+    <ng-template #notAuthenticated>
+      <div>
+        <button
+          class="nav__list--link btn"
+          routerLink="/auth/login"
+          type="button"
+          [ngStyle]="{ marginRight: '1rem' }"
+        >
+          Login
+        </button>
+        <button
+          class="nav__list--link btn"
+          routerLink="/auth/register"
+          type="button"
+        >
+          Sign-up
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</header>

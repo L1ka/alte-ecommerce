@@ -1,10 +1,20 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, Inject} from '@angular/core';
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'ecomerce';
+export class AppComponent implements AfterViewInit{
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document
+  ) {
+  }
+
+  ngAfterViewInit(): void {
+    // this.document.documentElement.style.backgroundColor = 'red'
+  }
+
+
 }

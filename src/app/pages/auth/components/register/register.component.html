@@ -1,0 +1,117 @@
+<div class="login">
+  <div class="login__input">
+    <div class="test test1"></div>
+    <div class="test test2"></div>
+    <div class="test test3"></div>
+    <div class="test test4"></div>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      class="login__input__container"
+    >
+      <h1>Sign Up</h1>
+      <div class="login__input--item">
+        <label>First Name</label>
+        <input
+          placeholder="First name"
+          id="firstname"
+          formControlName="firstName"
+        />
+      </div>
+      <div class="login__input--item">
+        <label>Last Name</label>
+        <input
+          placeholder="Last name"
+          id="lastname"
+          formControlName="lastName"
+        />
+      </div>
+      <div class="login__input--item">
+        <label>Email</label>
+        <input placeholder="Email" id="email" formControlName="email" />
+      </div>
+      <div class="login__input--item">
+        <label>Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          formControlName="password"
+        />
+      </div>
+      <div class="login__input--item">
+        <label>Confirm Password</label>
+        <input
+          type="password"
+          formControlName="confirmPassword"
+          id="confirmPassword"
+          placeholder="confirmPassword"
+        />
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- <form
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      class="login__input__container"
+    >
+      <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+
+      <div class="form-floating my-3">
+        <input
+          class="form-control"
+          formControlName="firstName"
+          id="firstName"
+          placeholder="First Name"
+        />
+        <label for="firstName">First Name</label>
+      </div>
+
+      <div class="form-floating my-3">
+        <input
+          class="form-control"
+          formControlName="lastName"
+          id="lastName"
+          placeholder="Last Name"
+        />
+        <label for="lastName">Last Name</label>
+      </div>
+
+      <div class="form-floating my-3">
+        <input
+          type="email"
+          class="form-control"
+          formControlName="email"
+          id="email"
+          placeholder="name@example.com"
+        />
+        <label for="email">Email address</label>
+      </div>
+      <div class="form-floating my-3">
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          id="floatingPassword"
+          placeholder="Password"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating my-3">
+        <input
+          type="password"
+          class="form-control"
+          formControlName="confirmPassword"
+          id="confirmPassword"
+          placeholder="confirmPassword"
+        />
+        <label for="confirmPassword">Confirm Password</label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">
+        Sign up
+      </button>
+    </form> -->
+  </div>
+</div>
